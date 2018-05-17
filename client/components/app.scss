@@ -1,0 +1,51 @@
+@mixin felx-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    background: white;
+    display: grid;
+    grid-template-columns: 68px 1fr ;
+    grid-template-rows: auto ;
+
+    .navContainer{
+        background: #323231;
+        color: white;
+        width: 68px;
+        
+        .navHeader{
+            @include felx-center();
+            width: 100%;
+            height: 60px;
+            background: #fd4d4a;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .button{
+            background: #323231;
+            color: #788195;
+            border: none !important;
+            width: 100%;
+            height: 63px;
+        }
+        .button:focus{
+            outline: none;
+        }
+
+        ._button{
+            background: #2d2d2d;
+            box-shadow: inset 0 0 9px 0 rgba(0,0,0,.25);
+            border: none !important;
+            width: 100%;
+            height: 63px;
+        }
+        ._button:focus{
+            outline: none;
+        }
+    }
+}
