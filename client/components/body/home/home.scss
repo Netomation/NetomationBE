@@ -1,147 +1,39 @@
-
-@mixin avatar{
-    height: 300px;
-    width: 300px;
-    background: white;
-    margin: 0 30px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid black;
-    
-}
-
-
-.img{
-    height: 300px;
-    width: 300px;
-}
-
-.imgYakir{
-
-    height: 400px;
-    width: 500px;
-}
-
 .container{
     height: 100%;
     width: 100%;
-    background: white;
-    
+    display: grid;
+    // background: black;
+    grid-template-columns:1fr;
+    grid-template-rows: auto ;
+    grid-template-areas: 
+    "widgets"
+    "chart"
+    ;
+}
 
-    .header{
-        height: 150px;
-        width: 100%;
-        background: #dfe0ff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        .title{
-            padding: 40px;
-            font-weight: bold;
-            font-size: 55px;
-        }
+.widgetsContainer{
+    grid-area: widgets;
+    display: grid;
 
-        .logo{
-            border-radius: 50%;
-            height: 75px;
-            width: 75px;
-            background: white;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows: auto ;
+    grid-template-areas: 
+    "mrr subs churn"
+    ;
 
-        }
-
+    .mrr{
+        grid-area: mrr;
+        background: lightblue;
     }
-
-    .contrabutersContainer{
-        height: 850px;
-        max-width: 100%;
-        background:#59a19c;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-
-
-        .contrabuitersTitle{
-            height: 40px;
-            font-weight: bold;
-            font-size: 20px;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .contrabuiters{
-            height: 100%;
-            width: 800px;
-            background: lightblue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            .preSlider{
-                flex:1;
-                background: blueviolet;
-            }
     
-            .afterSlider{
-                flex:1;
-                background: blueviolet;
-                
-            }
-            // .slider{
-            //     flex:1;
-            // }
-            .avatarContainer{
-                margin: 50px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                .avatar{
-                    @include avatar();
-                }
-                .discription{
-                    height: 50px;
-                    width: 150px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    // background: white;
-                    // margin: 15px 30px;
-                }
-            }
-        }
+    .subs{
+        grid-area: subs;
+        background: lightgoldenrodyellow;
+    
     }
-
-    .infoContainer{
-        width: 100%;
-        background: white;
-
-        .infoProj{
-            height: 500px;
-            width: 100%;
-            background: lightcoral;
-
-        }
-
-        .infoProffsor{
-            height: 400px;
-            background: #59a19c;
-        }
-
-        .infoyakir{
-            height: 400px;
-            background: lightgoldenrodyellow;
-        }
-
-        .infoColuge{
-            height: 400px;
-            background: lightpink;
-        }
+    
+    .churn{
+        grid-area: churn;
+        background: lightgreen;
     }
 }

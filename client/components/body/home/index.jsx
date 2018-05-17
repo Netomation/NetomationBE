@@ -8,8 +8,14 @@ let Home = () => {
 
     return (
         <div className={styles.container}>
-
-            <Chart />
+            <div className={styles.widgetsContainer}>
+                <div className={styles.mrr}>mrr</div>
+                <div className={styles.subs}>subs</div>
+                <div className={styles.churn}>churn</div>
+            </div>
+            <div classname={styles.chart}>
+                <Chart />
+            </div>
         </div>
     )
 }

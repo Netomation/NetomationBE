@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './app.scss';
 import Home from './body/home';
-// import Statistics from './body/statistics';
+import Conversion from './body/conversion';
+import Settings from './body/settings';
+import Revenue from './body/revenue';
+
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import faHome from '@fortawesome/fontawesome-free-solid/faHome'
-import faStar from '@fortawesome/fontawesome-free-solid/faStar'
-import faBars from '@fortawesome/fontawesome-free-solid/faBars'
+import faDollarSign from '@fortawesome/fontawesome-free-solid/faDollarSign'
+import faMoneyBillAlt from '@fortawesome/fontawesome-free-solid/faMoneyBillAlt'
+import faCog from '@fortawesome/fontawesome-free-solid/faCog'
 
 import { NavLink, Route, Switch } from 'react-router-dom';
 
@@ -25,7 +29,7 @@ export default class App extends React.Component {
     constructor(){
         super();
         this.state={
-            active: 'Home'
+            active: 'home'
         }
     }
       
@@ -36,28 +40,24 @@ export default class App extends React.Component {
             active: title
         })
     }
-    
-    handleNavClick = () => {
-        this.setState({
-            ...this.state,
-            navOpen: !this.state.navOpen
-        })
-    }
 
     render() {
         return (
             <div className={styles.container}>
                 <div className={styles.navContainer}>
                     <div className={styles.navHeader}>LS</div>
-                    <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'Home'} icon={faHome}/>
-                    <_Button active={this.state.active} route={'/statistics'} handleChangeNav={this.handleChangeNav} icon={faStar} title={'Statistics'}/>
+                    <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
+                    <_Button active={this.state.active} route={'/revenue'} handleChangeNav={this.handleChangeNav} icon={faDollarSign} title={'revenue'}/>
+                    <_Button active={this.state.active} route={'/conversion'} handleChangeNav={this.handleChangeNav} icon={faMoneyBillAlt} title={'conversion'}/>
+                    <_Button active={this.state.active} route={'/settings'} handleChangeNav={this.handleChangeNav} icon={faCog} title={'settings'}/>
                 </div>
                 <div className={styles.infoContainer}>
-                    <div className={styles.body}>
-                        <Switch>
-                            <Route path="/" render={() => <Home />} />
-                        </Switch>
-                    </div>
+                    <Switch>
+                        <Route path="/conversion" render={() => <Conversion />} />
+                        <Route path="/revenue" render={() => <Revenue />} />
+                        <Route path="/settings" render={() => <Settings />} />                            
+                        <Route path="/" render={() => <Home />} />
+                    </Switch>
                 </div>
             </div>
         )
