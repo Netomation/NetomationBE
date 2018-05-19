@@ -243,10 +243,10 @@ export default class Chart extends React.Component{
                 height: this.props.height
               },
               title: {
-                text: 'Browser market share, January, 2018'
+                text: this.props.title
               },
               subtitle: {
-                text: 'Source: <a href="http://statcounter.com" target="_blank">statcounter.com</a>'
+                text: ''
               },
               yAxis: {
                 title: {
@@ -263,7 +263,7 @@ export default class Chart extends React.Component{
                 valueSuffix: '%'
               },
               series: [{
-                name: 'Browsers',
+                name: 'Clicked / Not Clicked',
                 data: browserData,
                 size: '60%',
                 dataLabels: {
@@ -274,7 +274,7 @@ export default class Chart extends React.Component{
                   distance: -30
                 }
               }, {
-                name: 'Versions',
+                name: 'Intristingness / compatibility',
                 data: versionsData,
                 size: '80%',
                 innerSize: '60%',

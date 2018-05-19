@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './app.scss';
 import Home from './body/home';
 import Analytics from './body/analytics';
-import Settings from './body/settings';
 import Contributors from './body/contributors';
 
 var FontAwesome = require('react-fontawesome')
@@ -22,7 +21,7 @@ const fontawesome = require('@fortawesome/fontawesome')
 const faFlag = require('@fortawesome/fontawesome-free-solid/faFlag')
 const faSquare = require('@fortawesome/fontawesome-free-solid/faSquare')
 
-import { NavLink, Route, Switch } from 'react-router-dom';
+import { NavLink, Route, Switch, Redirect } from 'react-router-dom';
 
 const _Button = (data) => (
     <Route render={({ history}) => (
@@ -60,6 +59,7 @@ export default class App extends React.Component {
                     <div className={styles.navHeader}>
                         <div className={styles.logo}>N</div>
                     </div>
+                    <Redirect to='/' />        
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/contributors'} handleChangeNav={this.handleChangeNav} icon={faUsers} title={'contributors'}/>
                     <_Button active={this.state.active} route={'/analytics'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'analytics'}/>
@@ -73,6 +73,10 @@ export default class App extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    componentDidMount(){
+        {console.log('test')}
     }
     
     componentWillUpdate(previusState, newState){
