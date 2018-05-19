@@ -171,11 +171,15 @@ export default class Chart extends React.Component{
                 plotBackgroundColor: null,
                 plotBorderWidth: null,
                 plotShadow: false,
-                type: 'pie'
-              },
-              title: {
-                text: 'Browser market shares in January, 2018'
-              },
+                type: 'pie',
+                width: this.props.width,
+                height: this.props.height
+            },
+            title: {
+                text: ''
+            },
+            // colors: this.props.color, //['#0052CC', '#0051ca99'],    
+              
               tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
               },
@@ -197,34 +201,14 @@ export default class Chart extends React.Component{
                 colorByPoint: true,
                 data: [{
                   name: 'Chrome',
-                  y: 61.41,
+                  y: 80,
                   sliced: true,
                   selected: true
                 }, {
                   name: 'Internet Explorer',
-                  y: 11.84
-                }, {
-                  name: 'Firefox',
-                  y: 10.85
-                }, {
-                  name: 'Edge',
-                  y: 4.67
-                }, {
-                  name: 'Safari',
-                  y: 4.18
-                }, {
-                  name: 'Sogou Explorer',
-                  y: 1.64
-                }, {
-                  name: 'Opera',
-                  y: 1.6
-                }, {
-                  name: 'QQ',
-                  y: 1.2
-                }, {
-                  name: 'Other',
-                  y: 2.61
-                }]
+                  y: 20
+                },
+                ]
               }]
             });
         }

@@ -26,10 +26,22 @@ const Test = () => {
                     <div className={styles.header}>Intrestingness</div>
                     <div className={styles.info}></div>
                 </div>
+
+                <div className={styles.quantityContainer}>
+                    <div className={styles.header}>Quantity</div>
+                    <div className={styles.info}></div>
+                </div>
+
+                <div className={styles.clicksContainer}>
+                    <div className={styles.header}>Clicks</div>
+                    <div className={styles.info}></div>
+                </div>
                 <div className={styles.chart}>
                     <Chart 
                         id={'0'}
                         type={'pie'}
+                        height = {700}
+                        // color= {['#0052CC', '#0051ca99']}
                     />
                 </div>
             </div>
