@@ -29,7 +29,10 @@ const Test = () => {
             
             <div className={styles.pageTitle} >
                 <div className={styles.routeName}>Home page</div>
-                <div className={styles.title}>Netomation</div>
+                <div className={styles._logo}>
+                    <div className={styles.logo}>N</div>
+                </div>
+                <div className={styles.title}>etomation</div>
                 <div className={styles.titleLogo}></div>
             </div>
             <Slider className={styles.mainContent} {...settings}>

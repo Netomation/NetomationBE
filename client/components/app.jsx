@@ -57,7 +57,9 @@ export default class App extends React.Component {
         return (
             <div className={styles.container}>
                 <div className={styles.navContainer}>
-                    <div className={styles.navHeader}>LS</div>
+                    <div className={styles.navHeader}>
+                        <div className={styles.logo}>N</div>
+                    </div>
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/revenue'} handleChangeNav={this.handleChangeNav} icon={faClipboardList} title={'revenue'}/>
                     <_Button active={this.state.active} route={'/conversion'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'conversion'}/>
