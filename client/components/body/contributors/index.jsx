@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './home.scss';
+import styles from './revenue.scss';
 import Slider from "react-slick";
 
 const yakirImg = 'https://lh3.googleusercontent.com/DqG14ZZ7OgdgVtfvBCtZTQPDH8KT-E5sPC7VeuW312vQVkfnqtcVyeUVYAMh55RNDmFeZczYMcvWbUqKuyLVIibp888Gv5dkg8z0QLDIbbSayu9BfI2GpRG0f5jFAkKtIaC90hjreGBW4Ygbvk05Qeyx4xvk4B2b7hoAT3KZOY6Gyj0IOajpKMMRDTY8dhfP2IisEXaglfZZWhsBjZFujtn1FRcL-7Id91AroV--8Hh2SOF8IgRZewnhj-i8xR5jeJE24-2lD35qhOgaTw1z3X1Ae-S-MqeGvj15rAWmexBJ41XSCpnYP-IC6oAD696wB3Ac6P8vvywWBgbwlwC8w6DyzQIDlzKvizaPFj1f2ujK9uihS4EPTVFw6O2N8S38ZCmff3vIm5Lmh9krVzow8wQtNmWAkzErCr2ENn6BIhoEHd9gVe8tOJTxq70kyh9TKSgajsvdOFav_PZWT1ufq0SKfSNtQtgA_j63QNZaoQb-EPqmRc_fGvu6ur6aeVfvSH1K-biCMP-XRq2cNB2H_arOgY_PPLW7zY5BHvMCISbl4bf8xcM-QBUv_RVaIlIpmcgH0FcIFBiZa_vmWpV5_VgeYTiekdf_vQBg9vo=w950-h713-no'
@@ -28,19 +28,45 @@ const Test = () => {
         <div className={styles.container} >
             
             <div className={styles.pageTitle} >
-                <div className={styles.routeName}>Home page</div>
+                <div className={styles.routeName}>Contributors</div>
                 <div className={styles._logo}>
                     <div className={styles.logo}>N</div>
                 </div>
                 <div className={styles.title}>etomation</div>
                 <div className={styles.titleLogo}></div>
             </div>
-            <div className={styles.infoContainer} >
-                <div className={styles.infoTitle}>About the project:</div>
-                <p>
-                    {data+data+data+data+data+data+data+data}
-                </p>
-            </div>
+            <Slider className={styles.mainContent} {...settings}>
+                <div className={styles.test}>
+                    <div className = {styles.picAvatar}>
+                        <img src={iaacovImg} className={styles.img} />
+                    </div>
+                    <div className={styles.contentAvatar}>
+                        <p>
+                            {data}
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.test}>
+                    <div className = {styles.picAvatar}>
+                        <img src={yakirImg} className={styles.img} /> 
+                    </div>
+                    <div className={styles.contentAvatar}>
+                        <p>
+                            {data}
+                        </p>
+                    </div>                
+                </div>
+                <div className={styles.test}>
+                    <div className = {styles.picAvatar}>            
+                        <img src={aviueImg} className={styles.img} />
+                    </div>
+                    <div className={styles.contentAvatar}>
+                        <p>
+                            {data}
+                        </p>
+                    </div>
+                </div>
+            </Slider>
         </div>
     )
 }
