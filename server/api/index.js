@@ -1,19 +1,9 @@
-var path = require('path');
-var fs = require('fs');
-var express = require('express');
+const {app} =require('./controllers/index');
+const {mongoose}=require('./models/index');
+const user = require('./controllers/user')
 
-var app = express();
+user.init();
 
-app.use(express.static(path.join(__dirname, '../../server')));
-
-app.get('/*', function(req, res) {
-	res.sendFile(path.join(__dirname, '../../server/index.html'), function(err) {
-	  if (err) {
-		res.status(500).send(err)
-	  }
-	})
-  })
-  
 app.listen(8000, function () {
 	console.log('running at localhost: 8000');
 });
