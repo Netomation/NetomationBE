@@ -100,11 +100,73 @@
             height: 60%;
             width: 90%;
             background: #c2c2c2;
+
+            .btn{
+                // font-family: 'Arvo', serif;
+                letter-spacing: 2px;
+                display: flex;
+                justify-content: flex-start;
+                border: none;
+                font-size: 14px;
+                background: #fbfbfb;
+                color: #403C3D;
+                border-bottom: 1px solid #dbdbdb;
+
+                &:focus{
+                    outline: none;
+                }
+                .text1{
+                    font-weight: bold;
+                    width: 100px;
+                    border-right: 1px solid #dbdbdb;
+                    margin: 0 20px 0 0;
+                }
+            }
+
+            .btn_active{
+                letter-spacing: 2px;
+                display: flex;
+                justify-content: flex-start;
+                border: none;
+                font-size: 14px;
+                /* font-weight: bold; */
+                background: #F5F5F4;
+                border-bottom: 1px solid #dbdbdb;
+                color: #403C3D;
+
+                &:focus{
+                    outline: none;
+                
+                }
+
+                .text1{
+                    font-weight: bold;
+                    width: 100px;
+                    border-right: 1px solid #dbdbdb;
+                    margin: 0 20px 0 0;
+                }
+            }
         }
 
         .submit{
-            height: 55px;
+            border: none;
+            background: #ef4a4b;
+            color: white;
+            font-weight: bold;
+            height: 35px;
+            font-size: 13px;
+            letter-spacing: 2.5px;
             width: 150px;
+
+            &:hover{
+                background: white;
+                border: 2px solid #ef4a4b !important;
+                color: #ef4a4b;
+            }
+
+            &:focus{
+                outline: none;
+            }
 
         }
     }
