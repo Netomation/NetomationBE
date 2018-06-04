@@ -1,18 +1,62 @@
 import React from 'react';
 import styles from './settings.scss';
 
-
 export default class Settings extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             chosen: '1',
+            arr: []
         }
         console.log(props, 'settings')
     }
+    
+    checkStatus(response) {
+        if (response.status >= 200 && response.status < 300) {
+            console.log('success')
+            let newArr = response;
+            console.log(newArr)
+            this.setState({
+                ...this.state,
+                arr: array.push(newArr)
+            })
+        } else {
+            var error = new Error(response.statusText)
+            error.response = response
+            throw error
+        }
+    }
+
+    componentWillUpdate(previusState, newState){
+        console.log(newState)
+    }
 
     changeButtonDisplay = (str) => {
-        console.log(str)
+        if(str == '1'){
+            fetch(`./api/one_clicked`)
+                .then(res => this.checkStatus(res));
+            fetch(`./api/one_clicked`)
+                .then(res => this.checkStatus(res));
+        }
+        if(str == '2'){
+            fetch(`./api/two_clicked`)
+                .then(res => this.checkStatus(res));
+            fetch(`./api/two_not_clicked`)
+                .then(res => this.checkStatus(res));
+        }
+        if(str == '3'){
+            fetch(`./api/three_clicked`)
+                .then(res => this.checkStatus(res));
+            fetch(`./api/three_not_clicked`)
+                .then(res => this.checkStatus(res));
+        }
+        if(str == '4'){
+            fetch(`./api/four_clicked`)
+                .then(res => this.checkStatus(res));
+            fetch(`./api/four_not_clicked`)
+                .then(res => this.checkStatus(res));
+        }
+
         this.setState({
             chosen: str
         })
