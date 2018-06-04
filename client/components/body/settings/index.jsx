@@ -3,11 +3,12 @@ import styles from './settings.scss';
 
 
 export default class Settings extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             chosen: '1',
         }
+        console.log(props, 'settings')
     }
 
     changeButtonDisplay = (str) => {
@@ -15,6 +16,22 @@ export default class Settings extends React.Component {
         this.setState({
             chosen: str
         })
+    }
+
+    change = () => {
+        let newData = {
+            quantity: 5000,
+            intrestigness: '100%',
+            compatibility: '40%',
+            clicks: 499,
+            clickedPresantage: 20,
+            notClicked : 50,
+            subCompetability: 20,
+            subIntrestingness :80,
+            subClickedCompetability :40,
+            subClickedIntrestingness :60,
+        }
+        this.props.changeData(newData);
     }
 
     render(){
@@ -77,7 +94,12 @@ export default class Settings extends React.Component {
                                 </div>
                             </button>
                         </div>
-                        <button className={styles.submit}>SUBMIT</button>
+                        <button
+                            className={styles.submit}
+                            onClick={this.change}
+                        >
+                            SUBMIT
+                        </button>
                     </div>
                 </div>
             </div>

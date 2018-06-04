@@ -42,8 +42,29 @@ export default class App extends React.Component {
     constructor(){
         super();
         this.state={
-            active: 'home'
+            active: 'home',
+            data: {
+                quantity: 1000,
+                intrestigness: "70%",
+                compatibility: "80%",
+                clicks: 500,
+                clickedPresantage: 50,
+                notClicked : 50,
+                subCompetability: 20,
+                subIntrestingness :80,
+                subClickedCompetability :40,
+                subClickedIntrestingness : 60,
+            }
         }
+    }
+
+    changeData = (newData) => {
+        console.log( '1')
+        this.setState({
+            ...this.state,
+            data: newData
+        })
+
     }
 
     handleChangeNav = (title) => {
@@ -60,7 +81,7 @@ export default class App extends React.Component {
                     <div className={styles.navHeader}>
                         <div className={styles.logo}>N</div>
                     </div>
-                    {/* <Redirect to='/' />         */}
+                    <Redirect to='/' />        
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/contributors'} handleChangeNav={this.handleChangeNav} icon={faUsers} title={'contributors'}/>
                     <_Button active={this.state.active} route={'/analytics'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'analytics'}/>
@@ -68,9 +89,20 @@ export default class App extends React.Component {
                 </div>
                 <div className={styles.infoContainer}>
                     <Switch>
-                        <Route path="/analytics" render={() => <Analytics />} />
+                        <Route path="/analytics" render={() => <Analytics
+                            quantity={this.state.data.quantity}
+                            intrestigness = {this.state.data.intrestigness}
+                            compatibility = {this.state.data.compatibility}
+                            clicks = {this.state.data.clicks}
+                            clickedPresantage = {this.state.data.clickedPresantage}
+                            notClicked = {this.state.data.notClicked}
+                            subCompetability= {this.state.data.subCompetability}
+                            subIntrestingness = {this.state.data.subIntrestingness}
+                            subClickedCompetability = {this.state.data.subClickedCompetability}
+                            subClickedIntrestingness = {this.state.data.subClickedIntrestingness}
+                        />} />
                         <Route path="/contributors" render={() => <Contributors />} />
-                        <Route path="/settings" render={() => <Settings />} />
+                        <Route path="/settings" render={() => <Settings changeData={this.changeData} />} />
                         <Route path="/" render={() => <Home />} />
                     </Switch>
                 </div>

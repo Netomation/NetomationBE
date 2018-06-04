@@ -172,7 +172,7 @@ export default class Chart extends React.Component{
         ],
         data = [
           {
-            "y": 50,
+            "y": this.props.clicked,
             "color": colors[2],
             "drilldown": {
               "name": "Chrome",
@@ -181,13 +181,13 @@ export default class Chart extends React.Component{
                 "intrestingness",
               ],
               "data": [
-                80,
-                70
+                this.props.subClickedCompetability,
+                this.props.subClickedIntrestingness
               ]
             }
           },
           {
-            "y":50,
+            "y":this.props.notClicked,
             "color": colors[1],
             "drilldown": {
               "name": "Firefox",
@@ -196,8 +196,8 @@ export default class Chart extends React.Component{
                 "intrestingness",
               ],
               "data": [
-                80,
-                50
+                this.props.subCompetability,
+                this.props.subIntrestingness
               ]
             }
           },
