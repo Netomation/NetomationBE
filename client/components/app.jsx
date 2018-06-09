@@ -85,7 +85,7 @@ export default class App extends React.Component {
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/contributors'} handleChangeNav={this.handleChangeNav} icon={faUsers} title={'contributors'}/>
                     <_Button active={this.state.active} route={'/analytics'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'analytics'}/>
-                    <_Button active={this.state.active} route={'/settings'} handleChangeNav={this.handleChangeNav} icon={faCog} title={'settings'}/>
+                    {/* <_Button active={this.state.active} route={'/settings'} handleChangeNav={this.handleChangeNav} icon={faCog} title={'settings'}/> */}
                 </div>
                 <div className={styles.infoContainer}>
                     <Switch>
@@ -102,7 +102,7 @@ export default class App extends React.Component {
                             subClickedIntrestingness = {this.state.data.subClickedIntrestingness}
                         />} />
                         <Route path="/contributors" render={() => <Contributors />} />
-                        <Route path="/settings" render={() => <Settings changeData={this.changeData} />} />
+                        {/* <Route path="/settings" render={() => <Settings changeData={this.changeData} />} /> */}
                         <Route path="/" render={() => <Home />} />
                     </Switch>
                 </div>

@@ -35,27 +35,25 @@ export default class Settings extends React.Component {
         if(str == '1'){
             fetch(`./api/one_clicked`)
                 .then(res => this.checkStatus(res));
-            fetch(`./api/one_clicked`)
-                .then(res => this.checkStatus(res));
         }
-        if(str == '2'){
-            fetch(`./api/two_clicked`)
-                .then(res => this.checkStatus(res));
-            fetch(`./api/two_not_clicked`)
-                .then(res => this.checkStatus(res));
-        }
-        if(str == '3'){
-            fetch(`./api/three_clicked`)
-                .then(res => this.checkStatus(res));
-            fetch(`./api/three_not_clicked`)
-                .then(res => this.checkStatus(res));
-        }
-        if(str == '4'){
-            fetch(`./api/four_clicked`)
-                .then(res => this.checkStatus(res));
-            fetch(`./api/four_not_clicked`)
-                .then(res => this.checkStatus(res));
-        }
+        // if(str == '2'){
+        //     fetch(`./api/two_clicked`)
+        //         .then(res => this.checkStatus(res));
+        //     fetch(`./api/two_not_clicked`)
+        //         .then(res => this.checkStatus(res));
+        // }
+        // if(str == '3'){
+        //     fetch(`./api/three_clicked`)
+        //         .then(res => this.checkStatus(res));
+        //     fetch(`./api/three_not_clicked`)
+        //         .then(res => this.checkStatus(res));
+        // }
+        // if(str == '4'){
+        //     fetch(`./api/four_clicked`)
+        //         .then(res => this.checkStatus(res));
+        //     fetch(`./api/four_not_clicked`)
+        //         .then(res => this.checkStatus(res));
+        // }
 
         this.setState({
             chosen: str
