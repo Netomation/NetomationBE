@@ -177,12 +177,12 @@ export default class Chart extends React.Component{
             "drilldown": {
               "name": "Chrome",
               "categories": [
-                "compatibility",
-                "intrestingness",
+                "match",
+                "interestingness",
               ],
               "data": [
-                this.props.subClickedCompetability,
-                this.props.subClickedIntrestingness
+                this.props.subClickedMatch,
+                this.props.subClickedInterestingness
               ]
             }
           },
@@ -192,12 +192,12 @@ export default class Chart extends React.Component{
             "drilldown": {
               "name": "Firefox",
               "categories": [
-                "compatibility",
+                "match",
                 "intrestingness",
               ],
               "data": [
-                this.props.subCompetability,
-                this.props.subIntrestingness
+                this.props.subMatch,
+                this.props.subInterestingness
               ]
             }
           },
@@ -274,7 +274,7 @@ export default class Chart extends React.Component{
                   distance: -30
                 }
               }, {
-                name: 'Intristingness / compatibility',
+                name: 'Interestingness / Match',
                 data: versionsData,
                 size: '80%',
                 innerSize: '60%',

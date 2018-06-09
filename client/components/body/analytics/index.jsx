@@ -26,18 +26,18 @@ const Test = (props) => {
             </div>
             <div className={styles.infoContainer} >
                 <div className={styles.compatibilityContainer}>
-                    <div className={styles.header}>Compatibility</div>
+                    <div className={styles.header}>Match</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faCertificate} />        
-                        {props.compatibility}
+                        {props.match}
                     </div>
                 </div>
                 <div className={styles.intrestingnessContainer}>
-                    <div className={styles.header}>Intrestingness</div>
+                    <div className={styles.header}>Interestingness</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faGem} />        
                     
-                        {props.intrestigness}                   
+                        {props.interestingness}                   
                     </div>
                 </div>
 
@@ -67,12 +67,12 @@ const Test = (props) => {
                         height = {650}
                         clicked = {props.clickedPresantage}
                         notClicked = {props.notClicked}
-                        subCompetability = {props.subCompetability}
-                        subIntrestingness = {props.subIntrestingness}
-                        subClickedCompetability = {props.subClickedCompetability}
-                        subClickedIntrestingness = {props.subClickedIntrestingness}
+                        subMatch = {props.subMatch}
+                        subInterestingness = {props.subInterestingness}
+                        subClickedMatch = {props.subClickedMatch}
+                        subClickedInterestingness = {props.subClickedInterestingness}
 
-                        series ={
+                        series = {
                             [{
                                 name: 'people',
                                 colorByPoint: true,

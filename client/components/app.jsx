@@ -45,21 +45,20 @@ export default class App extends React.Component {
             active: 'home',
             data: {
                 quantity: 1000,
-                intrestigness: "70%",
-                compatibility: "80%",
+                interestingness: 0,
+                match: 0,
                 clicks: 500,
-                clickedPresantage: 50,
-                notClicked : 50,
-                subCompetability: 20,
-                subIntrestingness :80,
-                subClickedCompetability :40,
-                subClickedIntrestingness : 60,
+                clickedPresantage: 0,
+                notClicked : 0,
+                subMatch: 0,
+                subInterestingness :0,
+                subClickedMatch :0,
+                subClickedInterestingness : 0,
             }
         }
     }
 
     changeData = (newData) => {
-        console.log( '1')
         this.setState({
             ...this.state,
             data: newData
@@ -74,6 +73,80 @@ export default class App extends React.Component {
         })
     }
 
+
+    setClicked = (value) => {
+        let newValue = JSON.parse(value);
+        console.log(newValue)
+        this.setState({
+            ...this.state,
+            data: {
+                ...this.state.data,
+                clicks: newValue.quantity,
+                clickedPresantage: (newValue.quantity/152).toFixed(2) * 100,
+                subClickedInterestingness: Number(newValue.interestingness),
+                subClickedMatch: Number(newValue.match) 
+            }
+        })
+    }
+
+    setNotClicked = (value) => {
+        let newValue = JSON.parse(value);
+
+        this.setState({
+            ...this.state,
+            data: {
+                ...this.state.data,
+                notClicked: (newValue.quantity/152).toFixed(2) * 100,
+                subMatch: Number(newValue.interestingness),
+                subInterestingness: Number(newValue.match) 
+            }
+        })
+    }
+
+    setEveryone = (value) => {
+        let newValue = JSON.parse(value);
+
+        this.setState({
+            ...this.state,
+            data: {
+                ...this.state.data,
+                quantity: newValue.quantity,
+                interestingness: newValue.interestingness.toString() + ' ' + '%',
+                match: newValue.match.toString() + ' ' + '%' 
+            }
+        })
+    }
+
+    componentDidMount(){
+        let temp = (text) => {
+            this.setClicked(text)
+        };
+        let temp1 = (text) => {
+            this.setNotClicked(text)
+        };
+        let temp2 = (text) => {
+            this.setEveryone(text)
+        };
+
+        fetch(`./api/everyone`).then(function(response) {
+            response.text().then(function(text){
+                temp2(text);
+            })
+        })
+
+        fetch(`./api/clicked`).then(function(response) {
+            response.text().then(function(text){
+                temp(text);
+            })
+        })
+        fetch(`./api/notClicked`).then(function(response) {
+            response.text().then(function(text){
+                temp1(text);
+            })
+        })
+
+    }
+
     render() {
         return (
             <div className={styles.container}>
@@ -81,7 +154,7 @@ export default class App extends React.Component {
                     <div className={styles.navHeader}>
                         <div className={styles.logo}>N</div>
                     </div>
-                    <Redirect to='/' />        
+                    {/* <Redirect to='/' />         */}
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/contributors'} handleChangeNav={this.handleChangeNav} icon={faUsers} title={'contributors'}/>
                     <_Button active={this.state.active} route={'/analytics'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'analytics'}/>
@@ -91,15 +164,15 @@ export default class App extends React.Component {
                     <Switch>
                         <Route path="/analytics" render={() => <Analytics
                             quantity={this.state.data.quantity}
-                            intrestigness = {this.state.data.intrestigness}
-                            compatibility = {this.state.data.compatibility}
+                            interestingness = {this.state.data.interestingness}
+                            match = {this.state.data.match}
                             clicks = {this.state.data.clicks}
                             clickedPresantage = {this.state.data.clickedPresantage}
                             notClicked = {this.state.data.notClicked}
-                            subCompetability= {this.state.data.subCompetability}
-                            subIntrestingness = {this.state.data.subIntrestingness}
-                            subClickedCompetability = {this.state.data.subClickedCompetability}
-                            subClickedIntrestingness = {this.state.data.subClickedIntrestingness}
+                            subMatch= {this.state.data.subMatch}
+                            subInterestingness = {this.state.data.subInterestingness}
+                            subClickedMatch = {this.state.data.subClickedMatch}
+                            subClickedInterestingness = {this.state.data.subClickedInterestingness}
                         />} />
                         <Route path="/contributors" render={() => <Contributors />} />
                         {/* <Route path="/settings" render={() => <Settings changeData={this.changeData} />} /> */}
@@ -110,9 +183,7 @@ export default class App extends React.Component {
         )
     }
 
-    componentDidMount(){
-        {console.log('test')}
-    }
+
     
     componentWillUpdate(previusState, newState){
         console.log(newState)

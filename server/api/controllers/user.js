@@ -46,20 +46,34 @@ const calculation = (x) => {
     "we", "we'd", "we'll", "we're", "we've", "were", "what", "what's", "when", "when's", "where",
     "where's", "which", "while", "who", "who's", "whom", "why", "why's", "with", "would", "you", "you'd",
     "you'll", "you're", "you've", "your", "yours", "yourself", "yourselves"]
+    let arr = [];
 
     for(let i = 0; i < x.length; i++){
         user_desc = Object.values(x[i])[3].user_description.split(' ');
         user_desc = user_desc.filter(v => stop_words.indexOf(v) < 0)
         if(user_desc.length != 0){
             let user_desc_len = user_desc.length;
-            let user_desc_matched_words_len = user_desc.filter(v => conference_desc.indexOf(v) < 0).length;
+            let user_desc_matched_words_len = user_desc.filter(v => conference_desc.indexOf(v) > 0).length;
+            console.log(user_desc_len, 'user_desc_len')
+            console.log(user_desc_matched_words_len, 'user_desc_matched_words_len')
             let user_desc_mismatched_words_len = user_desc_len - user_desc_matched_words_len;
     
             let classic_match_score = user_desc_matched_words_len / user_desc_len;
             let interestingness_score = 4 * ((user_desc_matched_words_len * user_desc_mismatched_words_len) / (user_desc_len * user_desc_len)); // normalize to bounderies of 0 to 1
-            console.log(classic_match_score.toFixed(3),  interestingness_score.toFixed(3))
+            arr.push({match: classic_match_score.toFixed(3)*100, interestingness: interestingness_score.toFixed(3)*100})
         }
     }
+
+    let match_avr = 0;
+    let inter_avr = 0;
+    arr.map( v => {
+        match_avr += v.match;
+        inter_avr += v.interestingness;
+    })
+    match_avr /= x.length;
+    inter_avr /= x.length;
+
+    return {match: match_avr.toFixed(2), interestingness: inter_avr.toFixed(2), quantity: x.length}
 }
 
 let init = () => {
@@ -69,9 +83,9 @@ let init = () => {
             {"user_description": 1, "clicked": 1}
         , function (err, x) {
             if (x) {
-                calculation(x);
+                let arr = calculation(x);
                 response.status(200);
-                response.send(x);
+                response.send(arr);
             }
             else {
                 response.status(500);
@@ -86,9 +100,9 @@ let init = () => {
             {"user_description": 1, "clicked": 1}
         , function (err, x) {
             if (x) {
-                // calculation(x);
+                let arr = calculation(x);
                 response.status(200);
-                response.send(x);
+                response.send(arr);
             }
             else {
                 response.status(500);
@@ -103,9 +117,9 @@ let init = () => {
             {"user_description": 1, "clicked": 1}
         , function (err, x) {
             if (x) {
-                console.log(x.length)
+                let arr = calculation(x);
                 response.status(200);
-                response.send(x);
+                response.send(arr);
             }
             else {
                 response.status(500);
