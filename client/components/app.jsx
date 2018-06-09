@@ -48,7 +48,7 @@ export default class App extends React.Component {
                 interestingness: 0,
                 match: 0,
                 clicks: 500,
-                clickedPresantage: 0,
+                clickedPercentage: 0,
                 notClicked : 0,
                 subMatch: 0,
                 subInterestingness :0,
@@ -82,7 +82,7 @@ export default class App extends React.Component {
             data: {
                 ...this.state.data,
                 clicks: newValue.quantity,
-                clickedPresantage: (newValue.quantity/152).toFixed(2) * 100,
+                clickedPercentage: (newValue.quantity/152).toFixed(2) * 100,
                 subClickedInterestingness: Number(newValue.interestingness),
                 subClickedMatch: Number(newValue.match) 
             }
@@ -167,7 +167,7 @@ export default class App extends React.Component {
                             interestingness = {this.state.data.interestingness}
                             match = {this.state.data.match}
                             clicks = {this.state.data.clicks}
-                            clickedPresantage = {this.state.data.clickedPresantage}
+                            clickedPercentage = {this.state.data.clickedPercentage}
                             notClicked = {this.state.data.notClicked}
                             subMatch= {this.state.data.subMatch}
                             subInterestingness = {this.state.data.subInterestingness}

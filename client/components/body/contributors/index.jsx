@@ -38,7 +38,7 @@ const Test = () => {
             <Slider className={styles.mainContent} {...settings}>
                 <div className={styles.test}>
                     <div className = {styles.picAvatar}>
-                        <img src={iaacovImg} className={styles.img} />
+                        <img src={require('./assets/IaacovExman.png')} className={styles.img} />
                     </div>
                     <div className={styles.contentAvatar}>
                         <p>
@@ -46,9 +46,9 @@ const Test = () => {
                         </p>
                     </div>
                 </div>
-                <div className={styles.test}>
+                {/* <div className={styles.test}>
                     <div className = {styles.picAvatar}>
-                        <img src={yakirImg} className={styles.img} /> 
+                        <img src={require('../../../../assets/yakir.png')} className={styles.img} /> 
                     </div>
                     <div className={styles.contentAvatar}>
                         <p>
@@ -65,7 +65,7 @@ const Test = () => {
                             {data}
                         </p>
                     </div>
-                </div>
+                </div> */}
             </Slider>
         </div>
     )

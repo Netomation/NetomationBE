@@ -41,6 +41,7 @@
 }
 
 .container{
+    letter-spacing: 1px;
     height: 100%;
     width: 100%;
     display: grid;
@@ -220,7 +221,17 @@
         // width: 100%;
         grid-area: chart;
         box-shadow: 0 2px 0 0 #eeeeee;
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+
+        @media screen and (min-width: 1300px) {
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto;
+        }
+
+
     }
 }

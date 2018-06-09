@@ -167,8 +167,8 @@ export default class Chart extends React.Component{
 
         var colors = Highcharts.getOptions().colors,
         categories = [
-          "Clicked",
-          "Not clicked",
+          this.props.cat_1,
+          this.props.cat_2,
         ],
         data = [
           {
@@ -251,7 +251,7 @@ export default class Chart extends React.Component{
               },
               yAxis: {
                 title: {
-                  text: 'Total percent market share'
+                  text: ''
                 }
               },
               pie: {
@@ -267,7 +267,7 @@ export default class Chart extends React.Component{
                 valueSuffix: '%'
               },
               series: [{
-                name: 'Clicked / Not Clicked',
+                name: this.props.subTitle,
                 data: browserData,
                 size: '60%',
                 dataLabels: {

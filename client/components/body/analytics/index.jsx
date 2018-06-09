@@ -27,14 +27,14 @@ const Test = (props) => {
             <div className={styles.infoContainer} >
 
                 <div className={styles.compatibilityContainer}>
-                    <div className={styles.header}>Match</div>
+                    <div className={styles.header}>Match Score</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faCertificate} />        
                         {props.match}
                     </div>
                 </div>
                 <div className={styles.intrestingnessContainer}>
-                    <div className={styles.header}>Interestingness</div>
+                    <div className={styles.header}>Interestingness Score</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faGem} />        
                     
@@ -43,7 +43,7 @@ const Test = (props) => {
                 </div>
 
                 <div className={styles.quantityContainer}>
-                    <div className={styles.header}>Quantity</div>
+                    <div className={styles.header}>Number of Pepole</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faUserCircle} />        
                     
@@ -52,7 +52,7 @@ const Test = (props) => {
                 </div>
 
                 <div className={styles.clicksContainer}>
-                    <div className={styles.header}>Clicks</div>
+                    <div className={styles.header}>Number of Clicks</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faHeart} />        
                         
@@ -61,25 +61,25 @@ const Test = (props) => {
                 </div>
 
                 <div className={styles.chart}>
+                    {/* main */}
                     <Chart 
                         height = {600}
-
+                        title={'Clicked ratio'}
+                        subTitle={'Main'}
                         className={styles.chart1}
                         id={'0'}
                         type={'pie'}
-                        clicked = {props.clickedPresantage}
+                        clicked = {props.clickedPercentage}
                         notClicked = {props.notClicked}
-                        subMatch = {props.subMatch}
-                        subInterestingness = {props.subInterestingness}
-                        subClickedMatch = {props.subClickedMatch}
-                        subClickedInterestingness = {props.subClickedInterestingness}
+                        cat_1="clicked"
+                        cat_2="didn't click"
 
                         series = {
                             [{
                                 name: 'people',
                                 colorByPoint: true,
                                 data: [{
-                                name: 'Not clicked',
+                                name: "didn't click",
                                 sliced: true,
                                 selected: true
                                 }, {
@@ -89,24 +89,26 @@ const Test = (props) => {
                             }]
                         }
                     />
+
+                    {/* interestingness */}
                     <Chart 
+                        title={'Interestingness ratio'}
                         id={'1'}
                         type={'pie'}
                         height = {600}
+                        cat_1="clicked"
+                        cat_2="didn't click"
+                        subTitle={'Interestingness'}
 
-                        clicked = {props.clickedPresantage}
-                        notClicked = {props.notClicked}
-                        subMatch = {props.subMatch}
-                        subInterestingness = {props.subInterestingness}
-                        subClickedMatch = {props.subClickedMatch}
-                        subClickedInterestingness = {props.subClickedInterestingness}
+                        clicked = {props.subClickedInterestingness}
+                        notClicked = {props.subInterestingness}
 
                         series = {
                             [{
                                 name: 'people',
                                 colorByPoint: true,
                                 data: [{
-                                name: 'Not clicked',
+                                name: "didn't click",
                                 sliced: true,
                                 selected: true
                                 }, {
@@ -116,28 +118,29 @@ const Test = (props) => {
                             }]
                         }
                     />
-                    <div>
+
+                    {/* match */}
                         <Chart 
+                            cat_1="clicked"
+                            cat_2="didn't click"
                             id={'2'}
                             height = {600}
                             type={'pie'}
-                            clicked = {props.clickedPresantage}
-                            notClicked = {props.notClicked}
-                            subMatch = {props.subMatch}
-                            subInterestingness = {props.subInterestingness}
-                            subClickedMatch = {props.subClickedMatch}
-                            subClickedInterestingness = {props.subClickedInterestingness}
+                            title={'Match ratio'}
+                            subTitle={'Match'}
 
+                            notClicked = {props.subClickedMatch}
+                            clicked = {props.subMatch}
                             series = {
                                 [{
-                                    name: 'people',
+                                    name: 'match',
                                     colorByPoint: true,
                                     data: [{
-                                    name: 'Not clicked',
+                                    name: "didn't click match",
                                     sliced: true,
                                     selected: true
                                     }, {
-                                    name: 'Clicked',
+                                    name: 'Clicked match',
                                     },
                                     ]
                                 }]
@@ -146,7 +149,6 @@ const Test = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 

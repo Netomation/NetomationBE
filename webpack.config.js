@@ -18,18 +18,7 @@ module.exports = {
         test: /\.scss$/, 
         loader: 'style-loader!css-loader?modules&localIdentName=[path][name]__[local]--[hash:base64:5]!sass-loader' 
       },
-      
-      {test: /\.(gif|png|jpe?g|svg)$/i,
-      use: [
-        'file-loader',
-        {
-          loader: 'image-webpack-loader',
-          options: {
-            bypassOnDebug: true,
-          },
-        },
-      ],}
-
+      { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' },
     ]
   },
   plugins: [
