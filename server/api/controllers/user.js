@@ -1,4 +1,4 @@
-
+var path = require('path');
 const {User} = require('./../models/user');
 const {app} = require('./index');
 
@@ -127,6 +127,14 @@ let init = () => {
             }
         });
     });
+
+    app.get('/*', function(req, res) {
+        res.sendFile(path.join(__dirname, '../../../server/index.html'), function(err) {
+          if (err) {
+            res.status(500).send(err)
+          }
+        })
+    })
 }
 
 

@@ -1,28 +1,12 @@
 import React from 'react';
 import styles from './home.scss';
-import Slider from "react-slick";
 
-const yakirImg = 'https://lh3.googleusercontent.com/DqG14ZZ7OgdgVtfvBCtZTQPDH8KT-E5sPC7VeuW312vQVkfnqtcVyeUVYAMh55RNDmFeZczYMcvWbUqKuyLVIibp888Gv5dkg8z0QLDIbbSayu9BfI2GpRG0f5jFAkKtIaC90hjreGBW4Ygbvk05Qeyx4xvk4B2b7hoAT3KZOY6Gyj0IOajpKMMRDTY8dhfP2IisEXaglfZZWhsBjZFujtn1FRcL-7Id91AroV--8Hh2SOF8IgRZewnhj-i8xR5jeJE24-2lD35qhOgaTw1z3X1Ae-S-MqeGvj15rAWmexBJ41XSCpnYP-IC6oAD696wB3Ac6P8vvywWBgbwlwC8w6DyzQIDlzKvizaPFj1f2ujK9uihS4EPTVFw6O2N8S38ZCmff3vIm5Lmh9krVzow8wQtNmWAkzErCr2ENn6BIhoEHd9gVe8tOJTxq70kyh9TKSgajsvdOFav_PZWT1ufq0SKfSNtQtgA_j63QNZaoQb-EPqmRc_fGvu6ur6aeVfvSH1K-biCMP-XRq2cNB2H_arOgY_PPLW7zY5BHvMCISbl4bf8xcM-QBUv_RVaIlIpmcgH0FcIFBiZa_vmWpV5_VgeYTiekdf_vQBg9vo=w950-h713-no'
-const aviueImg = 'https://lh3.googleusercontent.com/GdnsSNohvtSeSWdVFaDe1dlwt1thUd2EJmm4HLjm_0JPabI6q21euMOQ3XxCnmePU-9kDJZuQ2eNuWv2JoPJlA5C02Lllaa_PWMrio58yU4SBaADS5AXRETiBlDkssmie9oYA99wOE3XnJlEitGbH3i5gYz2gTnfOi4tSd2SJAnsIbsOdp0CkiAmYlzJafSibHr8kqQ3ebI0cD4blsZcZgMP6xDSykdV09PuixNgpZ_396Zh4Ml28l92Qn6tgFUdtyg9J03vh-S35A23RxuVIIPbIjhCZNS9fG0Cu30DqHTNqi9WhhAdJPVaToHh8-NKOE2LhfNZBhMXX9jf96nURBfK84FHUk2vwUIBj9n3Q11OLz0LVnNMRl6e2q0gJfh2jSLzGEMg6GyhSCLOsPd5mGZn8LpB5O5BquPyxGRuEld61m7VA9s5qd_eHnkFsYd7E_JYzvHMfyH8-irHIV-SVhCEPf-xNPaQBufNXFkZVLImwDtqIsFaAsoaUxQOHM265cpnXCnOST7g59sMWo-biTZ_b95KSjU-MORfDyXxfmO9XfD24dpeOA2mPyCGqaCnm7rft1ey4kahphNItogiDFrGvDBTVkXL4OycVz0=s225-no'
-const iaacovImg = 'https://lh3.googleusercontent.com/25O0RMuFLxt_bMkk4GrUWHeAxCMmn5P7GEX_t4-Rl5DF5LEgbGYvZt2KpARE1Z82Yt7ffHMrtZXXHJFnF2mxTh8wJuatw2eAFkebJfWs4-MHzjVu-J7jcJV6PeP5dEJClbZlVB5PIRYmAtxmpK7e_w3-Ll9F3j6FuuercYqxplbatU6k4GzcNdpT2GRYYHc_nM7sabmDgb--KpDhp-MKg7v8XC6Lo4uz28A6aDHKQBFibjXBLOGztHBYcgrkiGTMtdZU8feXjb6MpwXhNg6Zem_G41tcNho6mZ2XQqeaZZsvsVB2OKzo2YKTod_giRpBqg8u6l8xnSRl587uQoSVReMuuo75OrmyXaCZ6Lc7RHks9WwXQAYolFlABzemNFkb35G_yP2AmCg63AvS_16GjQtIxKBlV6phh-6ri3GhoI6zzgq0KyDqIjUsrz_KHZaBDuUW74JRWJhJuw8hhU8xavwM8Q0PTmQc-OUcxqMamCJx0P3zCrLQwDaqPVjKt5uMzf0wswRJV44RaCHTv3lODQEiNQQYWRh-yVxDPwzrnd8xnLBSk3rJVzgvRtmLHogHIUOxggNCv3l9zC-xPCwh160REO6QUj57SAO4PpY=s200-no'
-const data = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 const SampleArrow = () => (
     <div />
 )
 
-const Test = () => {
-
-    const settings = {
-        dots: true,
-        // infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: <SampleArrow />,
-        prevArrow: <SampleArrow />,
-      };
-  
+const Home = () => {
 
     return(
         <div className={styles.container} >
@@ -37,12 +21,32 @@ const Test = () => {
             </div>
             <div className={styles.infoContainer} >
                 <div className={styles.infoTitle}>About the project:</div>
-                <p>
-                    {data+data+data+data+data+data+data+data}
-                </p>
+                <div className={styles.contentContainer}>
+                    <p>
+                    This project engages in the effort of igniting an interest in a specific topic or conference by using social networks. The success ratio of finding relevant audience and igniting interest is measured by a relevant interestingness model.
+                    Large social Networks have marketing potential to
+                    spread information about interesting events to suitable audiences.
+                    However, huge network sizes and varieties of information
+                    available are obstacles to reach the desired goal. In this project we
+                    investigate the hypothesis of computable Interestingness as a
+                    criterion to focus on suitable audiences for any given event.
+                    Interestingness is calculated by combining two functions:
+                    Relevance and Surprise. A generic software tool has been
+                    developed (Called Netomation) as an experimental testbed to interact with any social
+                    network. Its inputs are the event characterization and audience
+                    candidates for the given event. Two results validate this work’s
+                    hypothesis: first, audience candidates who actually visited the
+                    event site, have on the average a bigger computed Interestingness
+                    than the rest of the population; second and most important,
+                    computed Interestingness better differentiates event site visitors,
+                    actually interested in the Event, from non-visitors, while
+                    Relevance alone, does not distinguish so-well between visitors and
+                    non-visitors. Throughout the project all relevant data was saved to a dedicated database and analyzed on a dedicated server. This project is the result of the combined effort of Yakir Winograd & Avihu Harush led by Prof. Iaakov Exman.
+                    </p>
+                </div>
             </div>
         </div>
     )
 }
 
-export default Test;
+export default Home;

@@ -154,7 +154,7 @@ export default class App extends React.Component {
                     <div className={styles.navHeader}>
                         <div className={styles.logo}>N</div>
                     </div>
-                    {/* <Redirect to='/' />         */}
+                    <Redirect to='/' />        
                     <_Button active={this.state.active} route={'/'} handleChangeNav={this.handleChangeNav} title={'home'} icon={faHome}/>
                     <_Button active={this.state.active} route={'/contributors'} handleChangeNav={this.handleChangeNav} icon={faUsers} title={'contributors'}/>
                     <_Button active={this.state.active} route={'/analytics'} handleChangeNav={this.handleChangeNav} icon={faChartLine} title={'analytics'}/>
