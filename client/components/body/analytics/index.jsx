@@ -25,6 +25,7 @@ const Test = (props) => {
                 <div className={styles.titleLogo}></div>
             </div>
             <div className={styles.infoContainer} >
+
                 <div className={styles.compatibilityContainer}>
                     <div className={styles.header}>Match</div>
                     <div className={styles.info}>
@@ -58,13 +59,14 @@ const Test = (props) => {
                         {props.clicks}
                     </div>
                 </div>
+
                 <div className={styles.chart}>
-                    {console.log(props , 'props')}
-                
                     <Chart 
+                        height = {600}
+
+                        className={styles.chart1}
                         id={'0'}
                         type={'pie'}
-                        height = {650}
                         clicked = {props.clickedPresantage}
                         notClicked = {props.notClicked}
                         subMatch = {props.subMatch}
@@ -77,16 +79,71 @@ const Test = (props) => {
                                 name: 'people',
                                 colorByPoint: true,
                                 data: [{
-                                  name: 'Not clicked',
-                                  sliced: true,
-                                  selected: true
+                                name: 'Not clicked',
+                                sliced: true,
+                                selected: true
                                 }, {
-                                  name: 'Clicked',
+                                name: 'Clicked',
                                 },
                                 ]
-                              }]
+                            }]
                         }
                     />
+                    <Chart 
+                        id={'1'}
+                        type={'pie'}
+                        height = {600}
+
+                        clicked = {props.clickedPresantage}
+                        notClicked = {props.notClicked}
+                        subMatch = {props.subMatch}
+                        subInterestingness = {props.subInterestingness}
+                        subClickedMatch = {props.subClickedMatch}
+                        subClickedInterestingness = {props.subClickedInterestingness}
+
+                        series = {
+                            [{
+                                name: 'people',
+                                colorByPoint: true,
+                                data: [{
+                                name: 'Not clicked',
+                                sliced: true,
+                                selected: true
+                                }, {
+                                name: 'Clicked',
+                                },
+                                ]
+                            }]
+                        }
+                    />
+                    <div>
+                        <Chart 
+                            id={'2'}
+                            height = {600}
+                            type={'pie'}
+                            clicked = {props.clickedPresantage}
+                            notClicked = {props.notClicked}
+                            subMatch = {props.subMatch}
+                            subInterestingness = {props.subInterestingness}
+                            subClickedMatch = {props.subClickedMatch}
+                            subClickedInterestingness = {props.subClickedInterestingness}
+
+                            series = {
+                                [{
+                                    name: 'people',
+                                    colorByPoint: true,
+                                    data: [{
+                                    name: 'Not clicked',
+                                    sliced: true,
+                                    selected: true
+                                    }, {
+                                    name: 'Clicked',
+                                    },
+                                    ]
+                                }]
+                            }
+                        />
+                    </div>
                 </div>
             </div>
         </div>

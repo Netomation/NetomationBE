@@ -240,7 +240,8 @@ export default class Chart extends React.Component{
             chart: {
                 type: 'pie',
                 width: this.props.width,
-                height: this.props.height
+                height: this.props.height,
+                margin: 0,
               },
               title: {
                 text: this.props.title
@@ -252,6 +253,9 @@ export default class Chart extends React.Component{
                 title: {
                   text: 'Total percent market share'
                 }
+              },
+              pie: {
+                slicedOffset: 0,
               },
               plotOptions: {
                 pie: {
@@ -290,7 +294,7 @@ export default class Chart extends React.Component{
               responsive: {
                 rules: [{
                   condition: {
-                    maxWidth: 400
+                    maxWidth: 1000
                   },
                   chartOptions: {
                     series: [{
