@@ -4,6 +4,8 @@ const user = require('./controllers/user')
 
 user.init();
 
-app.listen(8000, function () {
-	console.log('running at localhost: 8000');
+const host = '0.0.0.0', port = 27019;
+
+app.listen(port, host, function () {
+	console.log('running at $(host):$(prot)');
 });

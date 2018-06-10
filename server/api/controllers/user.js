@@ -54,8 +54,8 @@ const calculation = (x) => {
         if(user_desc.length != 0){
             let user_desc_len = user_desc.length;
             let user_desc_matched_words_len = user_desc.filter(v => conference_desc.indexOf(v) > 0).length;
-            console.log(user_desc_len, 'user_desc_len')
-            console.log(user_desc_matched_words_len, 'user_desc_matched_words_len')
+            // console.log(user_desc_len, 'user_desc_len')
+            // console.log(user_desc_matched_words_len, 'user_desc_matched_words_len')
             let user_desc_mismatched_words_len = user_desc_len - user_desc_matched_words_len;
     
             let classic_match_score = user_desc_matched_words_len / user_desc_len;

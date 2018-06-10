@@ -10,8 +10,6 @@ import faGem from '@fortawesome/fontawesome-free-solid/faGem'
 import faUserCircle from '@fortawesome/fontawesome-free-solid/faUserCircle'
 import faHeart from '@fortawesome/fontawesome-free-solid/faHeart'
 
-const data = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
 const Test = (props) => {
     return(
         <div className={styles.container} >
@@ -43,7 +41,7 @@ const Test = (props) => {
                 </div>
 
                 <div className={styles.quantityContainer}>
-                    <div className={styles.header}>Number of Pepole</div>
+                    <div className={styles.header}>Number of People</div>
                     <div className={styles.info}>
                         <FontAwesomeIcon className={styles.icon} icon={faUserCircle} />        
                     
