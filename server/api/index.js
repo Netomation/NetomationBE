@@ -7,5 +7,5 @@ user.init();
 const host = '0.0.0.0', port = 27019;
 
 app.listen(port, host, function () {
-	console.log('running at $(host):$(prot)');
+	console.log(`running at ${host}:${port}`);
 });

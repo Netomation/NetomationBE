@@ -81,7 +81,7 @@ const Test = (props) => {
                                 sliced: true,
                                 selected: true
                                 }, {
-                                name: 'Clicked',
+                                name: 'clicked',
                                 },
                                 ]
                             }]
@@ -110,7 +110,7 @@ const Test = (props) => {
                                 sliced: true,
                                 selected: true
                                 }, {
-                                name: 'Clicked',
+                                name: 'clicked',
                                 },
                                 ]
                             }]
@@ -134,11 +134,11 @@ const Test = (props) => {
                                     name: 'match',
                                     colorByPoint: true,
                                     data: [{
-                                    name: "didn't click match",
+                                    name: "didn't click",
                                     sliced: true,
                                     selected: true
                                     }, {
-                                    name: 'Clicked match',
+                                    name: 'clicked',
                                     },
                                     ]
                                 }]

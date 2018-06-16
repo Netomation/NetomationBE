@@ -74,15 +74,19 @@ export default class App extends React.Component {
     }
 
 
+	setStatePromise = state => (
+		new Promise(resolve => {
+			this.setState(state, resolve);
+		})
+	)
     setClicked = (value) => {
         let newValue = JSON.parse(value);
         console.log(newValue)
-        this.setState({
-            ...this.state,
+        return this.setStatePromise({
             data: {
                 ...this.state.data,
                 clicks: newValue.quantity,
-                clickedPercentage: (newValue.quantity/152).toFixed(2) * 100,
+                clickedPercentage: (newValue.quantity / this.state.data.quantity).toFixed(2) * 100,
                 subClickedInterestingness: Number(newValue.interestingness),
                 subClickedMatch: Number(newValue.match) 
             }
@@ -92,11 +96,10 @@ export default class App extends React.Component {
     setNotClicked = (value) => {
         let newValue = JSON.parse(value);
 
-        this.setState({
-            ...this.state,
+        return this.setStatePromise({
             data: {
                 ...this.state.data,
-                notClicked: (newValue.quantity/152).toFixed(2) * 100,
+                notClicked: (newValue.quantity / this.state.data.quantity).toFixed(2) * 100,
                 subMatch: Number(newValue.interestingness),
                 subInterestingness: Number(newValue.match) 
             }
@@ -105,46 +108,28 @@ export default class App extends React.Component {
 
     setEveryone = (value) => {
         let newValue = JSON.parse(value);
-
-        this.setState({
-            ...this.state,
-            data: {
-                ...this.state.data,
-                quantity: newValue.quantity,
-                interestingness: newValue.interestingness.toString() + ' ' + '%',
-                match: newValue.match.toString() + ' ' + '%' 
-            }
-        })
+		
+		return this.setStatePromise({
+			data: {
+				...this.state.data,
+				quantity: newValue.quantity,
+				interestingness: newValue.interestingness.toString() + ' ' + '%',
+				match: newValue.match.toString() + ' ' + '%' 
+			}
+		});
     }
 
     componentDidMount(){
-        let temp = (text) => {
-            this.setClicked(text)
-        };
-        let temp1 = (text) => {
-            this.setNotClicked(text)
-        };
-        let temp2 = (text) => {
-            this.setEveryone(text)
-        };
-
-        fetch(`./api/everyone`).then(function(response) {
-            response.text().then(function(text){
-                temp2(text);
-            })
-        })
-
-        fetch(`./api/clicked`).then(function(response) {
-            response.text().then(function(text){
-                temp(text);
-            })
-        })
-        fetch(`./api/notClicked`).then(function(response) {
-            response.text().then(function(text){
-                temp1(text);
-            })
-        })
-
+        const everyonePromise = fetch(`./api/everyone`).then(r => r.text());
+		const clickedPromise = fetch(`./api/clicked`).then(r => r.text());
+		const notClickedPromise = fetch(`./api/notClicked`).then(r => r.text());
+		
+		everyonePromise
+			.then(v => this.setEveryone(v))
+			.then(() => {
+				clickedPromise.then(v => this.setClicked(v));
+				notClickedPromise.then(v => this.setNotClicked(v));
+			});
     }
 
     render() {

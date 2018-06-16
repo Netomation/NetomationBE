@@ -35,19 +35,6 @@ const Test = () => {
             <Slider className={styles.mainContent} {...settings}>
                 <div className={styles.test}>
                     <div className = {styles.picAvatar}>
-                        <img src={require('./assets/IaacovExman.png')} className={styles.img} />
-                    </div>
-                    <div className={styles.contentAvatar}>
-                        <div className={styles._title}>
-                            Prof. Iaakov Exman
-                        </div>
-                        <p>
-                        Prof. Iaakov Exman of the department of software engineering in Azrieli College of Engineering in Jerusalem. Prof. Exman is currently the head of the JCE-Azrieli Excellence Program and the head of the M.sc program in Software Engineering. Prof. Exman worked on multiple subjects throughout his academic life and published in multiple places. Some examples of such work are "Linear Software Models: Standard Modularity Highlights Residual Coupling”, “Remote Scalable Entangling of Symmetric Dicke States” etc.
-                        </p>
-                    </div>
-                </div>
-                <div className={styles.test}>
-                    <div className = {styles.picAvatar}>
                         <img src={require('./assets/yakir.png')} className={styles.img} /> 
                     </div>
                     <div className={styles.contentAvatar}>
