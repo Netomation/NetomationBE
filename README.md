@@ -3,7 +3,7 @@
 </p>
 
 ## Netomation - The Website, client and server side
-### Software Interestingness Trigger by Social Network Automation
+### Calculated INTERESTINGNESS for marketing by social network
 
 This project is being advisored by professor Iaakov Exman.
 
