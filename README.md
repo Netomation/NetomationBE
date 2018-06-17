@@ -1,5 +1,7 @@
 <p align="center">
-  <img src ="https://github.com/Netomation/Netomation/blob/master/res/Netomation%20Logo.png?raw=true" height="175px" width="170px"/>
+  <img src = "https://github.com/Netomation/NetomationBE/blob/master/client/components/body/contributors/assets/frontend-backend.png">
+  <img src = "https://github.com/Netomation/Netomation/blob/master/res/Netomation%20Logo.png?raw=true" height="175px" width="170px"/>
+  <img src = "https://github.com/Netomation/NetomationBE/blob/master/client/components/body/contributors/assets/website.jpg">
 </p>
 
 ## Netomation - The Website, client and server side
