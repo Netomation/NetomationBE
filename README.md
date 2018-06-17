@@ -19,7 +19,7 @@ This project is being advisored by professor Iaakov Exman.
 | Project Management Board| [Board](https://github.com/Netomation/NetomationBE/projects/1) |
 | Documentation | [![Documentation](http://inch-ci.org/github/Netomation/Netomation.svg)](https://github.com/Netomation/Netomation/wiki/Documentation) |
 | Project Diary | [![Diary](http://inch-ci.org/github/Netomation/Netomation.svg)](https://github.com/Netomation/Netomation/wiki/Diary) |
-| Code Quality Analysis | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b8dd781c20654763b9faaa5ac1b9b93f)](https://www.codacy.com/app/Netomation/Netomation?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Netomation/Netomation&amp;utm_campaign=Badge_Grade) |
+| Code Quality Analysis | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9ffa5afc083046e592e814326f305981)](https://www.codacy.com/app/Netomation/NetomationBE?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Netomation/NetomationBE&amp;utm_campaign=Badge_Grade) |
 
 
 ## Software Design
